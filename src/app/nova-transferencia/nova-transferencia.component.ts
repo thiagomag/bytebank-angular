@@ -19,10 +19,11 @@ export class NovaTransferenciaComponent {
   transferir(){
     console.log('Solicitada uma transferência')
     const valorEmitir: Transferencia = {valor: this.valor, destino: this.destino};
-    this.service.adicionar(valorEmitir).subscribe(resultado => {
-      console.log(resultado);
-      this.limparCampos();
-    },
+    this.service.adicionar(valorEmitir).subscribe(
+      (resultado) => {
+        console.log(resultado);
+        this.limparCampos();
+      },
     (error) => console.error(error));
   }
 
